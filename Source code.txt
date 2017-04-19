@@ -1,0 +1,45 @@
+ public void setUp() throws Exception {
+        // set up appium against a local application
+        File appDir = new File(System.getProperty("user.dir"), "../../../apps/TestApp/build/Release-iphonesimulator");
+    File app = new File(appDir, "TestApp.app");
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
+    capabilities.setCapability(CapabilityType.VERSION, "6.0");
+
+    //tell Appium where the location of the app is
+    capabilities.setCapability("app", app.getAbsolutePath());
+
+    //create a RemoteWebDriver, the default port for Appium is 4723
+    driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+}
+
+
+
+@Before
+    public void setUp() throws Exception {
+        String sauceUserName = "YOUR_SAUCE_USERNAME";
+        String sauceAccessKey = "YOUR_SAUCE_ACCESS_KEY";
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android 6.0");
+    capabilities.setCapability("device", "nexus 6p");
+
+    //zip file containing your app to be tested
+    capabilities.setCapability("app", "http://appium.s3.amazonaws.com/TestApp6.0.app.zip");
+
+    driver = new RemoteWebDriver(new URL(MessageFormat.format("http://{0}:{1}@ondemand.saucelabs.com:80/wd/hub", sauceUserName, sauceAccessKey)),
+            capabilities);
+}
+
+
+
+    @Test
+    public void example() throws Exception {
+    
+
+    // get the value of the element
+    WebElement texts = driver.findElement(By.tagName("staticText"));
+    assertEquals(texts.getText(), "7507034276");
+	// find an element by tag name
+    WebElement button = driver.findElement(By.tagName("button"));
+    button.click();
+}
