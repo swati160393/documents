@@ -1,0 +1,20 @@
+App feature:
+->signup feature
+->registration feature
+->OTP validation feature
+->referance validation for another user feature
+->Tutorial screen display feature
+->refer and earn feature
+->help feature(personal chat assistant)
+->paying bill for (postpaid ,prepaid,household,cab booking,movie tickets,bus booking,hotel booking,event booking,burger and laundry)
+->canceling and starting session feature
+->linking ola and uber accounts feature
+->set reminder feature
+->linking paytm and freecharge accounts feature
+->linking to facebook feature
+->saving address feature
+->notification feature :sending notification using tools like onesignal/firebase
+->need help,about,check for update,rating and feedback feature
+->showing current credit for user with name,phone number(MSISDN),email id
+->order purchase/cancel feature
+->view all previous order feature
