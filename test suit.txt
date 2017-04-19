@@ -1,0 +1,5 @@
+test suit:
+->test cases
+1.launch app
+2.enter msisdn
+3.click on ok
